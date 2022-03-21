@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Tic-Tac-Toe",
+    "path": "/tictactoe",
+    "image": "../images/tis-tac-toe/tic-tac-toe.png"
+  },
+  {
+    "title": "Snake",
+    "path": "/snake",
+    "image": "../images/tis-tac-toe/tic-tac-toe.png"
+  }
+]

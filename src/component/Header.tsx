@@ -6,7 +6,11 @@ import Button from '@mui/material/Button';
 import {grey} from '@mui/material/colors';
 import Divider from '@mui/material/Divider';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onOpenSideBar(): void;
+}
+
+const Header: React.FC<HeaderProps> = ({onOpenSideBar}) => {
   const navigate = useNavigate();
 
   const onClickBtn = (path: string) => {
@@ -25,8 +29,8 @@ const Header: React.FC = () => {
           flexItem
           color={grey[50]}
         />
-        <Button sx={{color: grey[50]}} onClick={() => onClickBtn('/tictactoe')}>
-          TicTacToe
+        <Button sx={{color: grey[50]}} onClick={onOpenSideBar}>
+          Games List
         </Button>
       </Toolbar>
     </AppBar>
