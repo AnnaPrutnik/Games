@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
-import gamesList from '../helpers/games-list.json';
+import gamesList from '../../helpers/games-list.json';
 
 interface ISideBarProps {
   isOpenSideBar: boolean;

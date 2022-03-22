@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback, useRef} from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import ResultModal from '../ResultModal';
+import ResultModal from '../Common/ResultModal';
 import Direction from './Direction';
 
 const BOARD_SIZE = 10;
@@ -86,7 +86,11 @@ const Board: React.FC = () => {
   };
 
   const onClickKeyDown = (e: KeyboardEvent) => {
-    const index = AVAILABLE_MOVE.indexOf(e.key);
+    onChangeDirection(e.key);
+  };
+
+  const onChangeDirection = (value: string) => {
+    const index = AVAILABLE_MOVE.indexOf(value);
     if (index > -1) {
       setDirection(AVAILABLE_MOVE[index]);
     }
@@ -166,7 +170,7 @@ const Board: React.FC = () => {
           })}
         </Box>
       ))}
-      <Direction direction={direction} />
+      <Direction direction={direction} OnClickBtn={onChangeDirection} />
       <br />
       <Button variant='contained' onClick={onPauseGame} disabled={!play}>
         Pause

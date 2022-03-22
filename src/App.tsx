@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {Routes, Route} from 'react-router-dom';
-import Header from './component/Header';
+import Header from './component/Common/Header';
 import HomePage from './pages/Home';
 import TicTacToe from './pages/TicTacToe';
 import Snake from './pages/Snake';
 import CssBaseline from '@mui/material/CssBaseline';
-import SideBar from './component/SideBar';
+import SideBar from './component/Common/SideBar';
 
 function App() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);

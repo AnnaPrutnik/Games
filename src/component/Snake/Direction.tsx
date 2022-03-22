@@ -7,15 +7,25 @@ import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOu
 import ArrowCircleUpOutlinedIcon from '@mui/icons-material/ArrowCircleUpOutlined';
 
 interface IDirectionProp {
-  direction: string;
+  direction: string | null;
+  OnClickBtn(directionValue: string): void;
 }
 
-const Direction: React.FC<IDirectionProp> = ({direction}) => {
+const Direction: React.FC<IDirectionProp> = ({direction, OnClickBtn}) => {
+  const onClickDirection = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const value = e.currentTarget.ariaLabel;
+    if (value) {
+      OnClickBtn(value);
+    }
+  };
+
   return (
     <ButtonGroup variant='contained' sx={{my: '10px'}}>
       <Button
         color={direction === 'ArrowLeft' ? 'primary' : 'info'}
-        aria-label='arrowLeft'
+        disabled={direction === 'ArrowLeft'}
+        aria-label='ArrowLeft'
+        onClick={onClickDirection}
       >
         <ArrowCircleLeftOutlinedIcon
           color={direction === 'ArrowLeft' ? 'action' : 'inherit'}
@@ -23,7 +33,9 @@ const Direction: React.FC<IDirectionProp> = ({direction}) => {
       </Button>
       <Button
         color={direction === 'ArrowDown' ? 'primary' : 'info'}
-        aria-label='arrowDown'
+        disabled={direction === 'ArrowDown'}
+        aria-label='ArrowDown'
+        onClick={onClickDirection}
       >
         <ArrowCircleDownOutlinedIcon
           color={direction === 'ArrowDown' ? 'action' : 'inherit'}
@@ -31,7 +43,9 @@ const Direction: React.FC<IDirectionProp> = ({direction}) => {
       </Button>
       <Button
         color={direction === 'ArrowUp' ? 'primary' : 'info'}
-        aria-label='arrowUp'
+        disabled={direction === 'ArrowUp'}
+        aria-label='ArrowUp'
+        onClick={onClickDirection}
       >
         <ArrowCircleUpOutlinedIcon
           color={direction === 'ArrowUp' ? 'action' : 'inherit'}
@@ -39,7 +53,9 @@ const Direction: React.FC<IDirectionProp> = ({direction}) => {
       </Button>
       <Button
         color={direction === 'ArrowRight' ? 'primary' : 'info'}
-        aria-label='arrowRight'
+        disabled={direction === 'ArrowRight'}
+        aria-label='ArrowRight'
+        onClick={onClickDirection}
       >
         <ArrowCircleRightOutlinedIcon
           color={direction === 'ArrowRight' ? 'action' : 'inherit'}

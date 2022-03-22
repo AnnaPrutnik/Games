@@ -2,11 +2,11 @@
   {
     "title": "Tic-Tac-Toe",
     "path": "/tictactoe",
-    "image": "../images/tis-tac-toe/tic-tac-toe.png"
+    "image": "/image/tic-tac-toe.jpg"
   },
   {
     "title": "Snake",
     "path": "/snake",
-    "image": "../images/tis-tac-toe/tic-tac-toe.png"
+    "image": "/image/snake.jpg"
   }
 ]

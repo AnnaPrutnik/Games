@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import GamesMenu from '../component/Home/GamesMenu';
 
 const HomePage: React.FC = () => {
   return (
@@ -14,7 +15,8 @@ const HomePage: React.FC = () => {
       >
         Chose the Game
       </Typography>
-      {/* TODO Slider */}
+
+      <GamesMenu />
     </Container>
   );
 };

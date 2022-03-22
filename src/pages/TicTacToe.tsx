@@ -3,7 +3,7 @@ import Board from '../component/TicTacToe/Board';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import ResultModal from '../component/ResultModal';
+import ResultModal from '../component/Common/ResultModal';
 import {Values, Results} from '../component/TicTacToe/types';
 import {checkWinner} from '../helpers/tictoctoe';
 
